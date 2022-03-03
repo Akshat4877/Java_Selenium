@@ -1,0 +1,65 @@
+package Collection;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class MapDemo {
+	
+	
+	public static void main(String[] args) {
+		
+		Map<Integer, String> map=new HashMap<Integer, String>();
+		map.put(1, "B");
+		map.put(2, "B");
+		map.put(1, null);
+		map.put(3,"J");
+		//System.out.println(map.size());
+		//System.out.println(map.get(1));
+		
+//		Iterator itr=map.entrySet().iterator();
+//		while(itr.hasNext()) {
+//			Entry entry=(Entry)itr.next();
+//			System.out.println(entry.getKey());
+//			System.out.println(entry.getValue());
+//		}
+		
+		
+		System.out.println("For Each Loop*******");
+
+		//For each loop
+		for(Entry<Integer, String> entry: map.entrySet()) {
+
+			System.out.println(entry.getKey());
+			System.out.println(entry.getValue());
+		}
+		
+		System.out.println("Using Key Set****************");
+
+		Iterator<Integer>	itr1=map.keySet().iterator();
+		while(itr1.hasNext()) {
+			Integer key = itr1.next();
+			System.out.println(key);
+			System.out.println(map.get(key));
+		}
+		
+		System.out.println("Using Entry Set****************");
+
+		//traverseral in Map
+		 Iterator<Entry<Integer, String>> itr = map.entrySet().iterator();
+		while(itr.hasNext()) {
+			
+			Entry d=(Entry) itr.next();
+			System.out.println(d.getKey());
+			System.out.println(d.getValue());
+			
+		}
+		
+		System.out.println("****************");
+	
+			String value=map.get(2);
+			System.out.println("Key value is "+value);	
+	}
+
+}

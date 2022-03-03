@@ -1,0 +1,73 @@
+package TestNg;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+
+public class Anotations {
+	
+	
+	@BeforeSuite
+	void Demo() {
+		System.out.println("Before Suit");
+	}
+	
+	@BeforeClass
+	void Demo1() {
+		System.out.println("Before Class");
+	}
+	
+	@BeforeTest
+	void Demo2() {
+		System.out.println("Before Test");
+	}
+	
+	@BeforeMethod
+	void Demo3() {
+		System.out.println("Before Method");
+	}
+	
+	
+	@Test(expectedExceptions = ArithmeticException.class)
+	void TestScript2() {
+		System.out.println("Test Script2 @Test");	
+	}
+	
+/*?
+ * @
+ */
+	
+	
+	
+	@AfterMethod
+	void Demo4() {
+		System.out.println("After method");
+	}
+	
+	@AfterTest
+	void Demo5() {
+		System.out.println("After Test");
+	}
+	
+	@AfterClass
+	void Demo6() {
+		System.out.println("After Class");
+	}
+	
+	@AfterSuite
+	void Demo7() {
+		System.out.println("After Suit");
+	}
+	
+	
+	
+
+}

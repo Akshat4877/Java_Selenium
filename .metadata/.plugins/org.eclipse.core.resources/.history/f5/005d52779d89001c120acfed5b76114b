@@ -1,0 +1,47 @@
+package TestNg;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class CrossBrowser {
+	
+	@org.testng.annotations.Test
+	public void Test1() {
+		
+		DesiredCapabilities DC=new DesiredCapabilities().chrome();
+		ChromeOptions Option=new ChromeOptions();
+		Option.addArguments("incognito");
+		DC.setCapability(ChromeOptions.CAPABILITY, Option);
+		System.setProperty("webdriver.chrome.driver", "./exefiles1/chromedriver.exe");
+		WebDriver driver=new ChromeDriver(Option);
+		 String url = "https://www.google.com/";
+		    driver.manage().window().maximize();
+		    driver.get(url);
+		    
+		
+		System.out.println("Hi I am in Test 1 |"+Thread.currentThread().getId());
+		
+	}
+	
+	
+	  @org.testng.annotations.Test
+      public void Test2() {
+		  
+		  DesiredCapabilities DC=new DesiredCapabilities().chrome();
+			ChromeOptions Option=new ChromeOptions();
+			Option.addArguments("incognito");
+			DC.setCapability(ChromeOptions.CAPABILITY, Option);
+			System.setProperty("webdriver.chrome.driver", "./exefiles1/chromedriver.exe");
+			WebDriver driver=new ChromeDriver(Option);
+			 String url = "https://www.google.com/";
+			    driver.manage().window().maximize();
+			    driver.get(url);
+		  
+		System.out.println("Hi I am in Test 2 |"+Thread.currentThread().getId());
+
+		
+	}
+
+}

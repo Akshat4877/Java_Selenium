@@ -1,0 +1,21 @@
+package TestNg;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
+import  BasicAutomation.*;
+
+public class MultipleBrowsers {
+	
+	
+	@Test
+	public void Test() {
+		System.out.println("Hi I am Test");
+		BrowserFactory.Get("https://www.google.com");
+		
+		
+	}
+	
+
+}

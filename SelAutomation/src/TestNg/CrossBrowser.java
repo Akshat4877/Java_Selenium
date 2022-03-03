@@ -1,0 +1,35 @@
+package TestNg;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import BasicAutomation.*;
+
+public class CrossBrowser {
+	
+	@org.testng.annotations.Test
+	public void Test1() {
+		
+		Incognito.IncognitoChromeBrowser();
+		Incognito.Desitination("https://www.google.com");
+		    
+		
+		System.out.println("Hi I am in Test 1 |"+Thread.currentThread().getId());
+		
+	}
+	
+	
+	
+	  @org.testng.annotations.Test
+      public void Test2() {
+		  
+		  Incognito.IncognitoChromeBrowser();
+			Incognito.Desitination("https://www.selenium.dev/downloads/");
+		  
+		System.out.println("Hi I am in Test 2 |"+Thread.currentThread().getId());
+
+		
+	}
+
+}

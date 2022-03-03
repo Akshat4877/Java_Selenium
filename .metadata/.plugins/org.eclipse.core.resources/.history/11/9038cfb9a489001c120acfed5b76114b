@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+  <test name="TestChromeTestCases">
+  
+  <parameter name="browser" value="chrome"/>
+  <classes>
+  
+  <class name="BasicAutomation.BrowserFactory"/>
+  <class name="TestNg.MultipleBrowsers"/>
+  
+  </classes>
+ 
+  </test> 
+  
+  
+  <test name="TestFirefoxTestCases">
+  
+  <parameter name="browser" value="firefox"/>
+  <classes>
+  
+  <class name="TestNg.MultipleBrowsers"/>
+  
+  </classes>
+ 
+  </test> 
+  
+  
+</suite> 

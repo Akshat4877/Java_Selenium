@@ -1,0 +1,33 @@
+package BasicAutomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class Incognito {
+	
+	public static WebDriver driver;
+	
+	public static void IncognitoChromeBrowser() {
+		
+		DesiredCapabilities DC=new DesiredCapabilities().chrome();
+		ChromeOptions Option=new ChromeOptions();
+		Option.addArguments("incognito");
+		DC.setCapability(ChromeOptions.CAPABILITY, Option);
+		System.setProperty("webdriver.chrome.driver", "./exefiles1/chromedriver.exe");
+		 driver=new ChromeDriver(Option);
+		driver.manage().window().maximize();
+		
+		
+	}
+	
+	
+	public static void Desitination(String URL) {
+		
+		driver.get(URL);
+		
+
+	}
+
+}

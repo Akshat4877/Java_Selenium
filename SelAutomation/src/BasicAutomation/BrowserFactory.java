@@ -1,0 +1,42 @@
+package BasicAutomation;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class BrowserFactory {
+
+	
+	public static WebDriver driver;
+	
+	public static WebDriver LaunchBrowser(String browserName) {
+		
+		if(browserName.equalsIgnoreCase("chrome")){
+			System.setProperty("webdriver.chrome.driver", "./exefiles1/chromedriver.exe");	
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+		}
+		else if(browserName.equalsIgnoreCase("firefox")){
+			System.setProperty("webdriver.gecko.driver", "./exefiles1/geckodriver.exe");	
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		}
+		
+		return driver;	
+		
+	}
+	
+	public static void Get(String URL) {
+		driver.get(URL);
+	}
+	
+}
